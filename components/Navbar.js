@@ -18,14 +18,16 @@ const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
         return '/About';
       case 3:
         return '/Profile';
+      case 4: 
+        return '/Contact'
       default:
-        return '/Contact';
+        return '/Admin';
     }
   };
 
   return (
     <ul className={`list-none flexCenter flex-row ${isMobile && 'flex-col h-full'}`}>
-      {['Home', 'Auctions', 'About Us','Company Profile', 'Contact Us',  ].map((item, i) => (
+      {['Home', 'Auctions', 'About Us','Company Profile', 'Contact Us', 'Admin' ].map((item, i) => (
         <li
           key={i}
           onClick={() => {
