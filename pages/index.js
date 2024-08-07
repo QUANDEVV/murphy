@@ -88,9 +88,9 @@ With over 20 years of experience, Murphy Merchants Auctioneers offers comprehens
     </p>
     <div className="relative w-full h-80 overflow-hidden rounded-lg shadow-lg">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5547.906412661405!2d39.66957649619072!3d-4.062332265884409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18401321d4cc88db%3A0xe060f735310ae4df!2sMeru%20Rd%2C%20Mombasa!5e0!3m2!1sen!2ske!4v1719244729790!5m2!1sen!2ske"
-        width="100%"
+       src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3979.80061384945!2d39.665313674975565!3d-4.061029395912703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwMDMnMzkuNyJTIDM5wrA0MCcwNC40IkU!5e0!3m2!1sen!2ske!4v1723049691995!5m2!1sen!2ske" 
         height="100%"
+        width="100%"
         style={{ border: 0 }}
         allowFullScreen
         loading="lazy"
