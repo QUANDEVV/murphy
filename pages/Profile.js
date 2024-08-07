@@ -11,7 +11,7 @@ const Profile = () => {
         <div className="flex flex-row gap-8 overflow-x-auto">
           <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg w-full  flex flex-col items-center">
             <FaBuilding  className="text-6xl text-blue-600 dark:text-blue-400 mb-4" />
-            <h4 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-2">M/S Murphy Merchants Auctioneers</h4>
+            <h4 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-2 text-center" >M/S Murphy Merchants Auctioneers</h4>
             <p className="text-center text-gray-700 dark:text-gray-300">  Registered on October 25, 2004, we have grown to become a leading auctioneering firm in Kenya. Our proprietor, <br/> Mr. Evans M. Maabi, brings over 20 years of experience, ensuring top-notch services for our clients.</p>
           </div>
           
