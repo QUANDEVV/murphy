@@ -1,15 +1,15 @@
 // import heartOutline from './heart-outline.png';
 // import heart from './heart.png';
-// import logo from './logo.png';
+import logo from './logo.png';
 // import search from './Search.png';
 // import tick from './tick.png';
 // import cross from './cross.png';
 // import logo02 from './logo02.png';
 // import menu from './menu.png';
-// import discord from './discord.png';
-// import instagram from './instagram.png';
-// import telegram from './telegram.png';
-// import twitter from './twitter.png';
+import discord from './discord.png';
+import instagram from './instagram.png';
+import telegram from './telegram.png';
+import twitter from './twitter.png';
 // import upload from './upload.png';
 // import nft1 from './nft1.png';
 // import nft2 from './nft2.png';
@@ -46,21 +46,21 @@
 // // import auctions from './premium_photo-1681487977919-306ef7194d98.png';
 
 
-// export default {
+export default {
 //   // auctions,
 //   // auction,
 //   heartOutline,
 //   heart,
-//   logo,
+  logo,
 //   search,
 //   tick,
 //   cross,
 //   logo02,
 //   menu,
-//   discord,
-//   instagram,
-//   telegram,
-//   twitter,
+  discord,
+  instagram,
+  telegram,
+  twitter,
 //   upload,
 //   nft1,
 //   nft2,
@@ -81,4 +81,4 @@
 //   arrow,
   
  
-// };
+};
