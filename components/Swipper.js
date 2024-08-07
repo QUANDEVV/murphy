@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const HeroBanner = () => {
@@ -17,12 +18,10 @@ const HeroBanner = () => {
         <p className="text-base md:text-lg lg:text-xl mb-8">
           Explore a curated selection of unique items and experiences. Join now and find your next treasure.
         </p>
-        <a
-          href="#"
-          className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105"
-        >
-          Explore Now
-        </a>
+       
+        <Link href="/Auctions" >
+        <p className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105">Explore Now</p>
+        </Link>
       </div>
     </div>
   );

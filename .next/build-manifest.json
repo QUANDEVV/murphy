@@ -20,6 +20,11 @@
       "static/chunks/main.js",
       "static/chunks/pages/index.js"
     ],
+    "/Auctions": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Auctions.js"
+    ],
     "/Contact": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
