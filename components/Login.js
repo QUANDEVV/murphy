@@ -15,7 +15,7 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="h-[700px] flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded shadow-md w-80">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6">Admin Login</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
