@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { useTheme } from 'next-themes';
+import SwiperSlider from '../components/Swipper';
 
 const Home = () => {
   const { theme } = useTheme();
@@ -34,7 +35,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-
+      <SwiperSlider />
 
       {/* Introduction Section */}
       <section id="id_intro_container" className="text-center p-8 bg-gray-100">

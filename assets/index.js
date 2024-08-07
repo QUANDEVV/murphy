@@ -37,16 +37,18 @@ import left from './left.png';
 import headerbg from './headerbg.png';
 import loader from './loader.gif';
 import arrow from './arrow.png';
+// import  auction from './auction.png';
 
 
 
+// import auction from './auction.jpg' ;
 
-
-
-
+// import auctions from './premium_photo-1681487977919-306ef7194d98.png';
 
 
 export default {
+  // auctions,
+  // auction,
   heartOutline,
   heart,
   logo,
