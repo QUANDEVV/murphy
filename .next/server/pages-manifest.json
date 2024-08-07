@@ -1,6 +1,13 @@
 {
+  "/About": "pages/About.html",
+  "/Admin": "pages/Admin.html",
+  "/Auctions": "pages/Auctions.html",
+  "/Contact": "pages/Contact.html",
+  "/Profile": "pages/Profile.html",
   "/_app": "pages/_app.js",
+  "/": "pages/index.html",
+  "/login": "pages/login.html",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/404": "pages/404.html"
 }
