@@ -7,7 +7,7 @@ const Login = ({ onLogin }) => {
   const [error, setError] = useState('');
 
   const handleLogin = () => {
-    if (username === 'admin' && password === 'password') {
+    if (username === 'murphy' && password === '@Secret') {
       onLogin(true);
     } else {
       setError('Invalid username or password');
