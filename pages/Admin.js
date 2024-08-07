@@ -2,10 +2,17 @@ import React, { useState } from 'react';
 import AuctionForm from '../components/AuctionForm';
 import AdForm from '../components/AdForm';
 import 'tailwindcss/tailwind.css';
+import Login from '../components/Login';
 
 const Admin = () => {
   const [activeTab, setActiveTab] = useState('auctions');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  if (!isLoggedIn) {
+    return <Login onLogin={setIsLoggedIn} />;
+  }
+
 
   return (
     <div className="flex min-h-screen bg-gray-100">
