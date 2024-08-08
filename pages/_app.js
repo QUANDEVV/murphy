@@ -1,6 +1,6 @@
 import Script from 'next/script';
 import { ThemeProvider } from 'next-themes';
-
+import { Toaster } from 'react-hot-toast';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -10,6 +10,7 @@ const MyApp = ({ Component, pageProps }) => (
 
   <ThemeProvider attribute="class">
     <div className="dark:bg-nft-dark bg-white min-h-screen">
+    <Toaster />
       <Navbar />
       <div className="pt-65">
         <Component {...pageProps} />

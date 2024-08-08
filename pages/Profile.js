@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaUserTie, FaRegHandshake, FaBuilding, FaSuitcase, FaDollarSign, FaUsers, FaGlobe, FaShieldAlt, FaRegCalendarAlt, FaMapMarkedAlt } from 'react-icons/fa';
-
+import Ads from '../components/ads';
 const Profile = () => {
   return (
     <div className="container mx-auto px-6 py-16">
@@ -151,6 +151,9 @@ const Profile = () => {
             </div>
           </div>
         </div>
+      </section>
+      <section>
+        <Ads />
       </section>
       {/* <div className="flex flex-row gap-8 overflow-x-auto"> */}
 

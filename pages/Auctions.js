@@ -3,53 +3,31 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaSearch, FaTag, FaDollarSign, FaCalendarAlt, FaStar } from 'react-icons/fa';
 
-// Dummy data for auction items
-const dummyItems = [
-  {
-    id: 1,
-    photo: 'https://media.istockphoto.com/id/1270127069/photo/real-estate-law-and-house-auction.webp?b=1&s=170667a&w=0&k=20&c=ctQI6hWGCiMEhsWZ5E8BMf3jp9O8R7HMrRFM_88wOrw=',
-    name: 'Vintage Vase',
-    description: 'A beautiful vintage vase from the 18th century.',
-    startingPrice: 150,
-    category: 'Antiques',
-    condition: 'Excellent',
-  },
-  {
-    id: 2,
-    photo: 'https://images.unsplash.com/photo-1587391028516-7a0d600436ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D',
-    name: 'Classic Car',
-    description: 'A well-maintained classic car with original parts.',
-    startingPrice: 20000,
-    category: 'Vehicles',
-    condition: 'Good',
-  },
-  {
-    id: 3,
-    photo: 'https://images.unsplash.com/photo-1583916011819-e4b81836bb57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D',
-    name: 'Modern Art Painting',
-    description: 'A contemporary painting by a famous artist.',
-    startingPrice: 5000,
-    category: 'Art',
-    condition: 'New',
-  },
-  {
-    id: 4,
-    photo: 'https://plus.unsplash.com/premium_photo-1661729685861-6d1c647e71fb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGF1Y3Rpb258ZW58MHx8MHx8fDA%3D',
-    name: 'Antique Clock',
-    description: 'An antique wall clock with intricate designs.',
-    startingPrice: 800,
-    category: 'Antiques',
-    condition: 'Fair',
-  },
-];
-
 const Auctions = () => {
-  const [items, setItems] = useState(dummyItems);
+  const [items, setItems] = useState([]);
   const [filter, setFilter] = useState({ category: '', priceRange: '', date: '', condition: '' });
 
   useEffect(() => {
-    // Fetch auction items from backend if needed
-    // Example: fetch('/api/auctions').then(res => res.json()).then(data => setItems(data));
+    const fetchAuctions = async () => {
+      try {
+        const response = await fetch('https://marphi.onrender.com/auctions/', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        if (response.ok) {
+          const data = await response.json();
+          setItems(data);
+        } else {
+          console.error('Failed to fetch auctions');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+
+    fetchAuctions();
   }, []);
 
   const handleFilterChange = (e) => {
@@ -57,7 +35,7 @@ const Auctions = () => {
   };
 
   const filteredItems = items.filter((item) => {
-    const withinPriceRange = filter.priceRange ? item.startingPrice <= parseInt(filter.priceRange) : true;
+    const withinPriceRange = filter.priceRange ? item.price <= parseInt(filter.priceRange) : true;
     const matchesCategory = filter.category ? item.category.toLowerCase().includes(filter.category.toLowerCase()) : true;
     const matchesCondition = filter.condition ? item.condition.toLowerCase().includes(filter.condition.toLowerCase()) : true;
     return withinPriceRange && matchesCategory && matchesCondition;
@@ -125,11 +103,11 @@ const Auctions = () => {
       <div className="grid grid-cols-3 sm:grid-cols-1 md:grid-cols-3 gap-8">
         {filteredItems.map((item) => (
           <div key={item.id} className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-            <img src={item.photo} alt={item.name} className="w-full h-48 object-cover" />
+            <img src={item.image} alt={item.name} className="w-full h-48 object-cover" />
             <div className="p-6">
               <h2 className="text-2xl font-semibold mb-2 text-gray-800">{item.name}</h2>
               <p className="text-gray-600 mb-2">{item.description}</p>
-              <p className="text-gray-800 font-bold mb-2">Starting Price: ${item.startingPrice}</p>
+              <p className="text-gray-800 font-bold mb-2">Starting Price: ${item.price}</p>
               <p className="text-gray-500 mb-2">Category: {item.category}</p>
               <p className="text-gray-500 mb-4">Condition: <span className={`font-medium ${item.condition === 'Excellent' ? 'text-green-500' : item.condition === 'Good' ? 'text-yellow-500' : item.condition === 'Fair' ? 'text-orange-500' : 'text-red-500'}`}>{item.condition}</span></p>
               <div className="flex space-x-4">
