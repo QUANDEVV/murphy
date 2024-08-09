@@ -25,7 +25,7 @@ const Ads = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center mb-6">Ads</h1>
+      <h1 className="text-3xl font-bold  mb-6">Ads</h1>
       <div className="ads-container flex  justify-between space-x-4 flex-row overflow-x-auto" >
         {ads.map((ad) => (
           <div key={ad.id} className="ad flex-1 bg-white shadow-lg rounded-lg overflow-hidden mb-6 sm:w-[250px]">
