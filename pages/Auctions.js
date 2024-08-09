@@ -74,7 +74,7 @@ const Auctions = () => {
           </select>
         </div>
 
-        <div className="flex items-center space-x-4">
+        {/* <div className="flex items-center space-x-4">
           <FaCalendarAlt className="text-gray-600" />
           <input
             type="date"
@@ -82,7 +82,7 @@ const Auctions = () => {
             onChange={handleFilterChange}
             className="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
           />
-        </div>
+        </div> */}
 
         <div className="flex items-center space-x-4">
           <FaStar className="text-gray-600" />
@@ -107,7 +107,11 @@ const Auctions = () => {
             <div className="p-6">
               <h2 className="text-2xl font-semibold mb-2 text-gray-800">{item.name}</h2>
               <p className="text-gray-600 mb-2">{item.description}</p>
-              <p className="text-gray-800 font-bold mb-2">Starting Price: ${item.price}</p>
+              <p className="text-gray-800 font-bold mb-2">
+  Starting Price: KES {Number(item.price).toLocaleString('en-KE', { minimumFractionDigits: 0 })}
+</p>
+
+
               <p className="text-gray-500 mb-2">Category: {item.category}</p>
               <p className="text-gray-500 mb-4">Condition: <span className={`font-medium ${item.condition === 'Excellent' ? 'text-green-500' : item.condition === 'Good' ? 'text-yellow-500' : item.condition === 'Fair' ? 'text-orange-500' : 'text-red-500'}`}>{item.condition}</span></p>
               <div className="flex space-x-4">

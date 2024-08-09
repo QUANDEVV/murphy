@@ -133,23 +133,10 @@ const Profile = () => {
             <FaMapMarkedAlt className="text-4xl text-blue-600 dark:text-blue-400" />
             <div>
               <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Mombasa Office</h4>
-              <p className="text-gray-700 dark:text-gray-300">P.O. Box 26537-80100 Mombasa, Tanzania, Kenya</p>
+              <p className="text-gray-700 dark:text-gray-300">Mombasa,  Kenya</p>
             </div>
           </div>
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg flex items-center gap-4">
-            <FaMapMarkedAlt className="text-4xl text-green-600 dark:text-green-400" />
-            <div>
-              <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Nairobi Office</h4>
-              <p className="text-gray-700 dark:text-gray-300">P.O. Box 31358-00600 Nairobi, Kenya</p>
-            </div>
-          </div>
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg flex items-center gap-4">
-            <FaMapMarkedAlt className="text-4xl text-yellow-600 dark:text-yellow-400" />
-            <div>
-              <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Kisumu Office</h4>
-              <p className="text-gray-700 dark:text-gray-300">P.O. Box 993-40100 Kisumu, Kenya</p>
-            </div>
-          </div>
+         
         </div>
       </section>
       <section>
