@@ -1,14 +1,16 @@
 // pages/auctions.js
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { FaSearch, FaTag, FaDollarSign, FaCalendarAlt, FaStar } from 'react-icons/fa';
+import { FaTag, FaDollarSign, FaStar } from 'react-icons/fa';
 
 const Auctions = () => {
   const [items, setItems] = useState([]);
-  const [filter, setFilter] = useState({ category: '', priceRange: '', date: '', condition: '' });
+  const [categories, setCategories] = useState([]);
+  const [conditions, setConditions] = useState([]);
+  const [filter, setFilter] = useState({ category: '', priceRange: '', condition: '' });
 
+  // Fetch auctions data
   useEffect(() => {
-    const fetchAuctions = async () => {
+    const fetchData = async () => {
       try {
         const response = await fetch('https://marphi.onrender.com/auctions/', {
           method: 'GET',
@@ -16,9 +18,17 @@ const Auctions = () => {
             'Content-Type': 'application/json',
           },
         });
+
         if (response.ok) {
           const data = await response.json();
           setItems(data);
+
+          // Extract unique categories and conditions
+          const uniqueCategories = [...new Set(data.map(item => item.category))];
+          const uniqueConditions = [...new Set(data.map(item => item.condition))];
+
+          setCategories(uniqueCategories);
+          setConditions(uniqueConditions);
         } else {
           console.error('Failed to fetch auctions');
         }
@@ -27,7 +37,7 @@ const Auctions = () => {
       }
     };
 
-    fetchAuctions();
+    fetchData();
   }, []);
 
   const handleFilterChange = (e) => {
@@ -46,6 +56,7 @@ const Auctions = () => {
       <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">Auction Listings</h1>
 
       <div className="mb-8 flex flex-wrap gap-4 items-center">
+        {/* Category Filter */}
         <div className="flex items-center space-x-4">
           <FaTag className="text-gray-600" />
           <select
@@ -54,12 +65,15 @@ const Auctions = () => {
             className="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
           >
             <option value="">Category:</option>
-            <option value="Antiques">Antiques</option>
-            <option value="Vehicles">Vehicles</option>
-            <option value="Art">Art</option>
+            {categories.map((category, index) => (
+              <option key={index} value={category}>
+                {category}
+              </option>
+            ))}
           </select>
         </div>
 
+        {/* Price Range Filter */}
         <div className="flex items-center space-x-4">
           <FaDollarSign className="text-gray-600" />
           <select
@@ -74,16 +88,7 @@ const Auctions = () => {
           </select>
         </div>
 
-        {/* <div className="flex items-center space-x-4">
-          <FaCalendarAlt className="text-gray-600" />
-          <input
-            type="date"
-            name="date"
-            onChange={handleFilterChange}
-            className="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-          />
-        </div> */}
-
+        {/* Condition Filter */}
         <div className="flex items-center space-x-4">
           <FaStar className="text-gray-600" />
           <select
@@ -92,10 +97,11 @@ const Auctions = () => {
             className="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
           >
             <option value="">Condition:</option>
-            <option value="Excellent">Excellent</option>
-            <option value="Good">Good</option>
-            <option value="Fair">Fair</option>
-            <option value="Poor">Poor</option>
+            {conditions.map((condition, index) => (
+              <option key={index} value={condition}>
+                {condition}
+              </option>
+            ))}
           </select>
         </div>
       </div>
@@ -108,26 +114,25 @@ const Auctions = () => {
               <h2 className="text-2xl font-semibold mb-2 text-gray-800">{item.name}</h2>
               <p className="text-gray-600 mb-2">{item.description}</p>
               <p className="text-gray-800 font-bold mb-2">
-  Starting Price: KES {Number(item.price).toLocaleString('en-KE', { minimumFractionDigits: 0 })}
-</p>
-
-
+                Starting Price: KES {Number(item.price).toLocaleString('en-KE', { minimumFractionDigits: 0 })}
+              </p>
               <p className="text-gray-500 mb-2">Category: {item.category}</p>
-              <p className="text-gray-500 mb-4">Condition: <span className={`font-medium ${item.condition === 'Excellent' ? 'text-green-500' : item.condition === 'Good' ? 'text-yellow-500' : item.condition === 'Fair' ? 'text-orange-500' : 'text-red-500'}`}>{item.condition}</span></p>
+              <p className="text-gray-500 mb-4">
+                Condition: <span className={`font-medium ${item.condition === 'New' ? 'text-green-500' : 'text-orange-500'}`}>{item.condition}</span>
+              </p>
               <div className="flex space-x-4">
-              <a
-  href={`https://wa.me/+254769057803?text=I%20am%20interested%20in%20${encodeURIComponent(item.name)}%20(${encodeURIComponent(item.description)})`}
-  className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none transition"
->
-  Inquire
-</a>
-<a
-  href="tel:+1234567890"
-  className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 focus:outline-none transition"
->
-  Call Now
-</a>
-
+                <a
+                  href={`https://wa.me/+254722890305?text=I%20am%20interested%20in%20${encodeURIComponent(item.name)}%20(${encodeURIComponent(item.description)})`}
+                  className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none transition"
+                >
+                  Inquire
+                </a>
+                <a
+                  href="tel:+254722890305"
+                  className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 focus:outline-none transition"
+                >
+                  Call Now
+                </a>
               </div>
             </div>
           </div>
