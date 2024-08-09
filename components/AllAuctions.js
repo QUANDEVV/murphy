@@ -207,7 +207,9 @@ const AllAuctions = () => {
                   )}
                 <h2 className="text-xl font-semibold">{auction.name}</h2>
                 <p>{auction.description}</p>
-                <p className="font-bold">Price: ${auction.price}</p>
+                <p className="text-gray-800 font-bold mb-2">
+  Price: KES {Number(auction.price).toLocaleString('en-KE', { minimumFractionDigits: 0 })}
+</p>
                 <p>Condition: {auction.condition}</p>
                 <button
                   onClick={() => handleDelete(auction.id)}
