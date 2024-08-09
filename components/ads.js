@@ -35,7 +35,7 @@ const Ads = () => {
               <img src={ad.image} alt={ad.name} className="w-full h-48 object-cover" />
             )}
             {ad.price && <p className="text-gray-800 font-bold mb-2">
-  Starting Price: KES {Number(ad.price).toLocaleString('en-KE', { minimumFractionDigits: 0 })}
+  Price: KES {Number(ad.price).toLocaleString('en-KE', { minimumFractionDigits: 0 })}
 </p>}
             
             {/* Call to Action Buttons */}
