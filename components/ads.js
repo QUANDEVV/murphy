@@ -41,7 +41,7 @@ const Ads = () => {
             {/* Call to Action Buttons */}
             <div className="cta-buttons flex justify-between p-4">
               <a
-                href={`https://wa.me/+254732890305?text=I%20am%20interested%20in%20${encodeURIComponent(ad.name)}%20(${encodeURIComponent(ad.description)})`}
+                href={`https://wa.me/+254769057803?text=I%20am%20interested%20in%20${encodeURIComponent(ad.name)}%20(${encodeURIComponent(ad.description)})`}
                 className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 focus:outline-none transition"
               >
                 Inquire
