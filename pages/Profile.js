@@ -139,8 +139,11 @@ const Profile = () => {
          
         </div>
       </section>
-      <section>
+      <section className='flex flex-row overflow-x-auto'>
+        <div>
         <Ads />
+        </div>
+       
       </section>
       {/* <div className="flex flex-row gap-8 overflow-x-auto"> */}
 

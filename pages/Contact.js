@@ -12,7 +12,7 @@ const Contact = () => {
           <div className="flex items-center mb-4">
             <FaPhoneAlt className="text-2xl text-blue-500 dark:text-blue-400 mr-3" />
             <p className="text-gray-700 dark:text-gray-300">
-              <strong>Phone Number:</strong> 0732890305 and 0736670986
+              <strong>Phone Number:</strong> 0722890305
             </p>
           </div>
           <div className="flex items-center mb-4">
