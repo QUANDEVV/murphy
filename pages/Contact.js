@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
+import Ads from '../components/ads';
 
 const Contact = () => {
   return (
@@ -76,6 +77,8 @@ const Contact = () => {
           <span>Chat with us on WhatsApp</span>
         </a>
       </div>
+
+      <Ads />
     </div>
   );
 }

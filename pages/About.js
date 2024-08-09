@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaUserTie, FaRegHandshake, FaBuilding, FaStar, FaClock, FaGlobe, FaShieldAlt, FaBullhorn, FaEye, FaFlag, FaCogs, FaHandshake, FaSmile, FaPeopleCarry } from 'react-icons/fa';
+import Ads from '../components/ads';
 
 const About = () => {
   return (
@@ -103,6 +104,10 @@ const About = () => {
             <p className="text-gray-700 dark:text-gray-300 text-center">Our clients are at the center of everything we do, and we are committed to meeting their needs and expectations.</p>
           </div>
         </div>
+      </section>
+
+      <section>
+        <Ads />
       </section>
     </div>
   );

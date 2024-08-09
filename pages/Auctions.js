@@ -115,18 +115,19 @@ const Auctions = () => {
               <p className="text-gray-500 mb-2">Category: {item.category}</p>
               <p className="text-gray-500 mb-4">Condition: <span className={`font-medium ${item.condition === 'Excellent' ? 'text-green-500' : item.condition === 'Good' ? 'text-yellow-500' : item.condition === 'Fair' ? 'text-orange-500' : 'text-red-500'}`}>{item.condition}</span></p>
               <div className="flex space-x-4">
-                <a
-                  href={`https://wa.me/?text=I%20am%20interested%20in%20${encodeURIComponent(item.name)}%20(${encodeURIComponent(item.description)})`}
-                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none transition"
-                >
-                  Inquire
-                </a>
-                <a
-                  href={`tel:+1234567890`}
-                  className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 focus:outline-none transition"
-                >
-                  Call Now
-                </a>
+              <a
+  href={`https://wa.me/1234567890?text=I%20am%20interested%20in%20${encodeURIComponent(item.name)}%20(${encodeURIComponent(item.description)})`}
+  className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none transition"
+>
+  Inquire
+</a>
+<a
+  href="tel:+1234567890"
+  className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 focus:outline-none transition"
+>
+  Call Now
+</a>
+
               </div>
             </div>
           </div>
