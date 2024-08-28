@@ -11,7 +11,7 @@ const AllAuctions = () => {
   useEffect(() => {
     const fetchAuctions = async () => {
       try {
-        const response = await fetch('https://marphi.onrender.com/auctions/');
+        const response = await fetch('https://murphy-backends.onrender.com/auctions/');
         if (!response.ok) throw new Error('Failed to fetch auctions');
         const data = await response.json();
         setAuctions(data);
@@ -25,7 +25,7 @@ const AllAuctions = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`https://marphi.onrender.com/auctions/${id}/`, {
+      const response = await fetch(`https://murphy-backends.onrender.com/auctions/${id}/`, {
         method: 'DELETE',
       });
 
@@ -52,7 +52,7 @@ const AllAuctions = () => {
 
     try {
       const method = editingAuction ? 'PUT' : 'POST';
-      const url = editingAuction ? `https://marphi.onrender.com/auctions/${editingAuction.id}/` : 'https://marphi.onrender.com/auctions/';
+      const url = editingAuction ? `https://murphy-backends.onrender.com/auctions/${editingAuction.id}/` : 'https://murphy-backends.onrender.com/auctions/';
       const response = await fetch(url, {
         method,
         body: data,

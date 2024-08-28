@@ -28,7 +28,7 @@ const AdForm = () => {
     data.append('price', formData.price);
 
     try {
-      const response = await fetch('https://marphi.onrender.com/adverts/', {
+      const response = await fetch('https://murphy-backends.onrender.com/adverts/', {
         method: 'POST',
         body: data,
         // No need to set 'Content-Type' header for FormData

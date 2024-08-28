@@ -12,7 +12,7 @@ const AllAds = () => {
   useEffect(() => {
     const fetchAds = async () => {
       try {
-        const response = await fetch('https://marphi.onrender.com/adverts/');
+        const response = await fetch('https://murphy-backends.onrender.com/adverts/');
         if (!response.ok) {
           throw new Error('Failed to fetch ads');
         }
@@ -30,7 +30,7 @@ const AllAds = () => {
   // Handle delete request
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`https://marphi.onrender.com/adverts/${id}/`, {
+      const response = await fetch(`https://murphy-backends.onrender.com/adverts/${id}/`, {
         method: 'DELETE',
       });
 
@@ -68,7 +68,7 @@ const AllAds = () => {
     data.append('price', values.price);
 
     try {
-      const response = await fetch(`https://marphi.onrender.com/adverts/${editingAd.id}/`, {
+      const response = await fetch(`https://murphy-backends.onrender.com/adverts/${editingAd.id}/`, {
         method: 'PUT',
         body: data,
         // No need to set 'Content-Type' header for FormData

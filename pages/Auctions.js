@@ -12,7 +12,7 @@ const Auctions = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://marphi.onrender.com/auctions/', {
+        const response = await fetch('https://murphy-backends.onrender.com/auctions/', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -152,3 +152,7 @@ const Auctions = () => {
 };
 
 export default Auctions;
+
+
+
+https://murphy-backends.onrender.com

@@ -25,7 +25,7 @@ const AuctionForm = () => {
     data.append('condition', values.condition);
 
     try {
-      const response = await fetch('https://marphi.onrender.com/auctions/', {
+      const response = await fetch('https://murphy-backends.onrender.com/auctions/', {
         method: 'POST',
         body: data,
       });

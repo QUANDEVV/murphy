@@ -6,7 +6,7 @@ const Ads = () => {
   useEffect(() => {
     const fetchAds = async () => {
       try {
-        const response = await fetch('https://marphi.onrender.com/adverts/', {
+        const response = await fetch('https://murphy-backends.onrender.com/adverts/', {
           method: 'GET',
         });
         if (response.ok) {
