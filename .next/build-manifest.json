@@ -15,20 +15,15 @@
     "static/development/_middlewareManifest.js"
   ],
   "pages": {
-    "/Admin": [
+    "/": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Admin.js"
+      "static/chunks/pages/index.js"
     ],
     "/Auctions": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/Auctions.js"
-    ],
-    "/Profile": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/Profile.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",
