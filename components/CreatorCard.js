@@ -46,4 +46,3 @@ const CreatorCard = ({ rank, creatorImage, creatorName, nft }) =>
     
   );
 export default CreatorCard;
-// 
